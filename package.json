@@ -1,46 +1,51 @@
 {
-  "name": "discoverpoland",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@esri/react-arcgis": "^5.0.0",
-    "@terrestris/react-geo": "^11.4.4",
-    "axios": "^0.19.2",
-    "esri-loader": "^2.13.0",
-    "final-form": "^4.18.7",
-    "history": "^4.10.1",
-    "react": "^16.13.0",
-    "react-burger-menu": "^2.6.13",
-    "react-dom": "^16.13.0",
-    "react-final-form": "^6.3.5",
-    "react-responsive-carousel": "^3.1.51",
-    "react-router": "^5.1.2",
-    "react-router-dom": "^5.1.2",
-    "react-scripts": "^3.4.0",
-    "react-scroll": "^1.7.16",
-    "react-spring": "^8.0.27",
-    "styled-components": "^4.4.1",
-    "toasted-notes": "^3.2.0"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+   "name": "discoverpoland",
+   "version": "0.1.0",
+   "private": true,
+   "dependencies": {
+      "@esri/react-arcgis": "^5.0.0",
+      "@terrestris/react-geo": "^11.4.4",
+      "axios": "^0.19.2",
+      "esri-loader": "^2.13.0",
+      "final-form": "^4.18.7",
+      "history": "^4.10.1",
+      "react": "^16.13.0",
+      "react-burger-menu": "^2.6.13",
+      "react-dom": "^16.13.0",
+      "react-final-form": "^6.3.5",
+      "react-responsive-carousel": "^3.1.51",
+      "react-router": "^5.1.2",
+      "react-router-dom": "^5.1.2",
+      "react-scripts": "^3.4.0",
+      "react-scroll": "^1.7.16",
+      "react-spring": "^8.0.27",
+      "styled-components": "^4.4.1",
+      "toasted-notes": "^3.2.0"
+   },
+   "scripts": {
+      "start": "react-scripts start",
+      "build": "react-scripts build",
+      "test": "react-scripts test",
+      "eject": "react-scripts eject",
+      "postinstall": "npm run build"
+   },
+   "engines": {
+      "node": "10.16.0",
+      "npm": "6.9.0"
+   },
+   "eslintConfig": {
+      "extends": "react-app"
+   },
+   "browserslist": {
+      "production": [
+         ">0.2%",
+         "not dead",
+         "not op_mini all"
+      ],
+      "development": [
+         "last 1 chrome version",
+         "last 1 firefox version",
+         "last 1 safari version"
+      ]
+   }
 }
