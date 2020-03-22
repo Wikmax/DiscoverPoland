@@ -1,2 +1,2 @@
 release: python ./backend/manage.py migrate
-web: gunicorn discoverpoland.wsgi
+web: gunicorn ./backend/discoverpoland.wsgi
