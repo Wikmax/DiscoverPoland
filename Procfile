@@ -1,2 +1,2 @@
 release: python ./backend/manage.py migrate
-web: gunicorn ./backend/discoverpoland.wsgi
+web: gunicorn djreact.wsgi --log-file -
