@@ -1,11 +1,14 @@
 {
-    "name": "DiscoverPoland",
     "description": "Map searching app",
     "keywords": [
         "map",
         "HTML5",
         "Poland"
     ],
+    "app": {
+        "id": "888ee9fb-c090-499b-a115-2f335a1f0ef5",
+        "name": "DiscoverPoland"
+    },
     "website": "https://discover-poland.herokuapp.com/",
     "repository": "https://github.com/Wikmax/DiscoverPoland",
     "success_url": "/",
@@ -49,5 +52,5 @@
         {
             "url": "heroku/nodejs"
         }
-    ],
+    ]
 }
