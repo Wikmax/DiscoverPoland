@@ -1,4 +1,5 @@
 import os
+import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -113,3 +114,4 @@ CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:9000",
     "http://www.discover-poland.herokuapp.com"
 ]
+django_heroku.settings(locals())
