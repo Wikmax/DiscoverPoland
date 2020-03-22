@@ -1,2 +1,2 @@
-release: discoverpoland/manage.py migrate
-web: discoverpoland/manage.py runserver 0.0.0.0:$PORT --noreload
+release: manage.py migrate
+web: manage.py runserver 0.0.0.0:$PORT --noreload
