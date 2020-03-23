@@ -25,7 +25,7 @@ class PopupTemplate extends React.Component {
    };
    async componentDidMount() {
       await axios
-         .get("http://127.0.0.1:8000/api/")
+         .get("https://discover-poland.herokuapp.com/api/")
          .then(response => {
             this.setState({ apiPoints: response.data.Point });
             this.setState({ apiImgages: response.data.Image });

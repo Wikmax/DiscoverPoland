@@ -80,7 +80,7 @@ class ExtendInfo extends React.Component {
 
    componentDidMount() {
       axios
-         .get("http://127.0.0.1:8000/api/")
+         .get("https://discover-poland.herokuapp.com/api/")
          .then(response => {
             const images = response.data.Image;
             this.setState({ apiImages: images });
