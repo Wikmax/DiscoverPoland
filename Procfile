@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn discoverpoland.wsgi
+web: waitress-serve --port=$PORT {discoverpoland}.wsgi:application
