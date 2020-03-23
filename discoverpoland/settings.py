@@ -3,16 +3,11 @@ import django_heroku
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'wsik_xb8@l85_j2r^lw+6h*+h=b=bla$(7=ng@*(j3#(&e7-6r'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['discover-poland.herokuapp.com', '127.0.0.1']
-
-
-# Application definition
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -114,4 +109,4 @@ CORS_ORIGIN_WHITELIST = [
     "http://127.0.0.1:9000",
     "http://www.discover-poland.herokuapp.com"
 ]
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
