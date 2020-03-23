@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn discoverpoland.wsgi --log-file -
+web: gunicorn discoverpoland.wsgi
