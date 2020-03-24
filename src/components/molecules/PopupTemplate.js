@@ -29,6 +29,7 @@ class PopupTemplate extends React.Component {
          .then(response => {
             this.setState({ apiPoints: response.data.Point });
             this.setState({ apiImgages: response.data.Image });
+            console.log(response)
          })
          .catch(error => {
             console.log(error);
