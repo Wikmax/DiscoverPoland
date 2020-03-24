@@ -1,11 +1,5 @@
 from django.contrib import admin
-from .models import Point, Image
-
-
-class ImageInline(admin.TabularInline):
-    model = Image
-    extra = 1
-
+from .models import Point
 
 class PointAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -21,11 +15,11 @@ class PointAdmin(admin.ModelAdmin):
                     'latitude',
                     'declaredClass',
                     'Type',
+                    'imageURL'
                 ]
             }
         )
     ]
-    inlines = [ImageInline]
     list_display = ('objectID',
                     'title',
                     'longDescription',
@@ -33,7 +27,8 @@ class PointAdmin(admin.ModelAdmin):
                     'longitude',
                     'latitude',
                     'declaredClass',
-                    'Type',)
+                    'Type',
+                    'imageURL')
 
 
 admin.site.register(Point, PointAdmin)

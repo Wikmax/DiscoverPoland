@@ -17,7 +17,6 @@ class PopupTemplate extends React.Component {
       popupLayer: null,
       features: null,
       apiPoints: null,
-      apiImgages: null,
       infoOpen: false
    };
    onChange = newState => {
@@ -25,11 +24,10 @@ class PopupTemplate extends React.Component {
    };
    async componentDidMount() {
       await axios
-         .get("https://discover-poland.herokuapp.com/api/")
+         .get("http://127.0.0.1:8000/api/")
          .then(response => {
-            this.setState({ apiPoints: response.data.Point });
-            this.setState({ apiImgages: response.data.Image });
-            console.log(response)
+            this.setState({ apiPoints: response.data });
+            console.log(response);
          })
          .catch(error => {
             console.log(error);
@@ -51,8 +49,7 @@ class PopupTemplate extends React.Component {
          });
          const popupWindow = {
             title: "{title}",
-            content:
-               "<b>Krótki opis:</b> {shortDescription}",
+            content: "<b>Krótki opis:</b> {shortDescription}",
             actions: [this.props.measureDistanceAction, expandAction]
          };
          const featureSet = [];
@@ -72,7 +69,8 @@ class PopupTemplate extends React.Component {
                      Type: POINT.Type,
                      title: POINT.title,
                      longDescription: POINT.longDescription,
-                     shortDescription: POINT.shortDescription
+                     shortDescription: POINT.shortDescription,
+                     imageURL: POINT.imageURL
                   }
                }
             ];
@@ -82,12 +80,7 @@ class PopupTemplate extends React.Component {
             title: "popupLayer",
             source: featureSet,
             objectIdField: "OBJECTID",
-            outFields: [
-               "Type",
-               "title",
-               "longDescription",
-               "shortDescription"
-            ],
+            outFields: ["Type", "title", "longDescription", "shortDescription", "imageURL"],
             fields: [
                {
                   name: "Type",
@@ -108,6 +101,11 @@ class PopupTemplate extends React.Component {
                   name: "shortDescription",
                   type: "string",
                   alias: "shortDescription"
+               },
+               {
+                  name: "imageURL",
+                  type: "string",
+                  alias: "imageURL"
                }
             ],
             renderer: renderer,

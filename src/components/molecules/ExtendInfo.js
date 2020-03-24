@@ -66,9 +66,6 @@ class ExtendInfo extends React.Component {
       super(props);
       this.mapRef = React.createRef();
    }
-   state = {
-      apiImages: null
-   };
    scrollToBottom() {
       animateScroll.scrollToBottom({
          containerId: "infoModel"
@@ -78,40 +75,14 @@ class ExtendInfo extends React.Component {
       this.props.onStateChange(false);
    };
 
-   componentDidMount() {
-      axios
-         .get("https://discover-poland.herokuapp.com/api/")
-         .then(response => {
-            const images = response.data.Image;
-            this.setState({ apiImages: images });
-         })
-         .catch(error => {
-            console.log(error);
-         });
-   }
    render() {
-      if (
-         this.props.features !== null &&
-         this.props.infoOpen === true &&
-         this.state.apiImages !== null
-      ) {
+      if (this.props.features !== null && this.props.infoOpen === true) {
          this.scrollToBottom();
-         let images = [];
-
-         this.state.apiImages.map(IMAGES => {
-            let { file, point } = IMAGES;
-            console.log(point);
-            console.log(file);
-
-            if (point === this.props.features.OBJECTID) {
-               images.push(file);
-               console.log(images, "images_array");
-            }
-         });
 
          return (
             <StyledWrapper>
                {[this.props.features].map((feature, id) => {
+                  console.log([feature.imageURL]);
                   return (
                      <>
                         <div id='infoModel' key={id}>
@@ -121,20 +92,9 @@ class ExtendInfo extends React.Component {
                            <p id='title'>{feature.title}</p>
                            <p id='longDescription'>{feature.longDescription}</p>
                            <div id='carousel'>
-                              <Carousel
-                                 infiniteLoop={true}
-                                 showArrows={true}
-                                 showThumbs={false}
-                              >
-                                 {images.map((image, key) => {
-                                    console.log(image);
-                                    return (
-                                       <div key={key}>
-                                          <img key={key} src={image} />
-                                       </div>
-                                    );
-                                 })}
-                              </Carousel>
+                              <div>
+                                 <img src={feature.imageURL} />
+                              </div>
                            </div>
                         </div>
                      </>

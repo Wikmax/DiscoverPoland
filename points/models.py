@@ -14,15 +14,10 @@ class Point(models.Model):
         max_length=180, default=None, blank=True, null=True)
     Type = models.CharField(
         max_length=180, default=None, blank=True, null=True)
+    imageURL = models.CharField(max_length=180, default=None, blank=True, null=True)
 
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('posts:detail', kwargs={'pk': self.pk})
-
-
-class Image(models.Model):
-    point = models.ForeignKey(
-        Point, on_delete=models.CASCADE, default=None, blank=True, null=True)
-    file = models.ImageField(upload_to='images')

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, CreateView, DetailView
-from .models import Point, Image
-from .forms import ImageForm, ImageFormSet
+from .models import Point
+from .forms import PointFormSet, ImageForm
 from django.db import transaction
 
 
@@ -12,21 +12,21 @@ class PointList(ListView):
 
 class PointCreate(CreateView):
     model = Point
-    fields = ['content', ]
+    fields = ['imageURL', ]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['image_formset'] = ImageFormSet()
+        context['point_formset'] = PointFormSet()
         return context
 
     def form_valid(self, form):
-        image_formset = ImageFormSet(self.request.POST, self.request.FILES)
+        point_formset = PointFormSet(self.request.POST, self.request.FILES)
         with transaction.atomic():
             self.object = form.save()
 
-            if image_formset.is_valid():
-                image_formset.instance = self.object
-                image_formset.save()
+            if point_formset.is_valid():
+                point_formset.instance = self.object
+                point_formset.save()
         return super().form_valid(form)
 
 

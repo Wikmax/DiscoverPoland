@@ -1,14 +1,13 @@
 from django import forms
-from .models import Point, Image
+from .models import Point
 from django.forms import inlineformset_factory
 
 
 class ImageForm(forms.ModelForm):
-    file = forms.ImageField()
-
+    file = forms.CharField()
     class Meta:
-        model = Image
-        fields = ['file', ]
+        model = Point
+        fields = ['imageURL', ]
 
 
-ImageFormSet = inlineformset_factory(Point, Image, form=ImageForm, extra=1)
+PointFormSet = inlineformset_factory(Point, form=ImageForm, extra=1)

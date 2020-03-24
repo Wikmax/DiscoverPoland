@@ -1,17 +1,11 @@
 from rest_framework import serializers
-from points.models import Point, Image
+from points.models import Point
 
 
 class PointSerializer(serializers.ModelSerializer):
     class Meta:
         model = Point
         fields = ('id', 'title', 'longDescription', 'shortDescription', 'objectID',
-                  'longitude', 'latitude', 'declaredClass', 'Type')
+                  'longitude', 'latitude', 'declaredClass', 'Type','imageURL')
 
-
-class ImageSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Image
-        fields = ('point',
-                  'file')
 
