@@ -21,10 +21,11 @@ class Map extends React.Component {
             "esri/Map",
             "esri/views/MapView",
             "esri/layers/GraphicsLayer",
-            "esri/widgets/BasemapToggle"
+            "esri/widgets/BasemapToggle",
+            "esri/geometry/Extent"
          ],
          { css: false }
-      ).then(([ArcGISMap, MapView, GraphicsLayer, BasemapToggle]) => {
+      ).then(([ArcGISMap, MapView, GraphicsLayer, BasemapToggle, Extent]) => {
          const routeLayer = new GraphicsLayer();
 
          const typeSelect = document.getElementById("basemap");
@@ -45,6 +46,32 @@ class Map extends React.Component {
             zoom: 6.9
          });
 
+         view.watch("widthBreakpoint",function(breakpoint){
+            switch (breakpoint) {
+              case "xsmall":
+              // do something
+                break;
+              case "small":
+              case "medium":
+              case "large":
+              case "xlarge":
+              // do something else
+                break;
+              default:
+            }
+          });
+
+         view.extent = new Extent({
+            xmin: 21.4,
+            ymin: 51.99,
+            xmax: 21.4,
+            ymax: 51.99,
+            spatialReference: {
+               wkid: 102100
+            }
+         });
+         // view.scale = 24000;
+         view.navigation.browserTouchPanEnabled = false;
          let basemapToggle = new BasemapToggle({
             view: view,
             container: typeSelect

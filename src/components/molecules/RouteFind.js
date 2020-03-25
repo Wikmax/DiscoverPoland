@@ -6,6 +6,7 @@ import PopupTemplate from "./PopupTemplate";
 import Directions from "./Directions";
 import toaster from "toasted-notes";
 import "toasted-notes/src/styles.css"
+import searchingMap from '../../assets/searching-map.png'
 
 class RouteFind extends React.Component {
    constructor(props) {
@@ -94,6 +95,7 @@ class RouteFind extends React.Component {
             const measureDistanceAction = {
                title: "Wytycz trasę",
                id: "measure-distance",
+               image: searchingMap
             };
             this.setState({ measureDistanceAction });
 

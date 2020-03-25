@@ -1,6 +1,8 @@
 /** @format */
-
-import locationPointer from "../../assets/locationPointer.png";
+import locationPointerCave from "../../assets/locationPointerCave.png";
+import locationPointerNatural from "../../assets/locationPointerNatural.png";
+import locationPointerHistory from "../../assets/locationPointerHistory.png";
+import locationPointerUrbex from "../../assets/locationPointerUrbex.png";
 
 const renderer = {
    type: "unique-value",
@@ -8,42 +10,60 @@ const renderer = {
    defaultSymbol: { type: "simple-marker", color: "black", size: 10 },
    uniqueValueInfos: [
       {
-         value: "forest",
+         value: "natural",
 
          symbol: {
             type: "picture-marker",
-            url: locationPointer,
+            url: locationPointerNatural,
             width: "32px",
             height: "32px",
             color: "blue",
             outline: {
                style: "solid",
                color: "yellow"
-             },
+            }
          }
       },
       {
          value: "cave",
          symbol: {
-            type: "simple-marker",
-            color: "green",
-            size: 10
+            type: "picture-marker",
+            url: locationPointerCave,
+            width: "32px",
+            height: "32px",
+            color: "blue",
+            outline: {
+               style: "solid",
+               color: "yellow"
+            }
          }
       },
       {
          value: "history",
          symbol: {
-            type: "simple-marker",
-            color: "red",
-            size: 10
+            type: "picture-marker",
+            url: locationPointerHistory,
+            width: "32px",
+            height: "32px",
+            color: "blue",
+            outline: {
+               style: "solid",
+               color: "yellow"
+            }
          }
       },
       {
          value: "urban",
          symbol: {
-            type: "simple-marker",
-            color: "yellow",
-            size: 10
+            type: "picture-marker",
+            url: locationPointerUrbex,
+            width: "32px",
+            height: "32px",
+            color: "blue",
+            outline: {
+               style: "solid",
+               color: "yellow"
+            }
          }
       }
    ]

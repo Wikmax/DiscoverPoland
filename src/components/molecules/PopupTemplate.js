@@ -5,6 +5,7 @@ import { loadModules } from "esri-loader";
 import ExtendInfo from "./ExtendInfo";
 import axios from "axios";
 import renderer from "../atoms/PopupRenderer.js";
+import infoIcon from "../../assets/infoIcon.png"
 
 class PopupTemplate extends React.Component {
    constructor(props) {
@@ -39,7 +40,8 @@ class PopupTemplate extends React.Component {
          };
          const expandAction = {
             title: "Informacje",
-            id: "expand_action"
+            id: "expand_action",
+            image:infoIcon
          };
 
          this.props.view.popup.on("trigger-action", event => {

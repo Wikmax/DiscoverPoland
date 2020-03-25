@@ -9,10 +9,16 @@ import { ReactComponent as Logo } from "../../assets/castleLogo.svg";
 const StyledMenu = styled.div`
    .bm-burger-button {
       width: 100px;
-      height: 100px;
+      padding: 20px 0 0 5px;
+      :hover {
+         stroke: rgb(131, 137, 150);
+         stroke-width: 10px;
+         cursor: pointer;
+      }
       button {
          width: 100px !important;
          height: 100px !important;
+         padding: 20px 0 0 5px !important;
       }
    }
    .bm-menu-wrap.menu {
@@ -23,6 +29,7 @@ const StyledMenu = styled.div`
       .bm-burger-button {
          width: 60px;
          height: 60px;
+         padding: 20px 0 0 5px;
       }
       .bm-menu-wrap.menu {
          width: 35vw !important;
@@ -46,7 +53,7 @@ const StyledWrapper = styled.div`
    }
    text-align: center;
    font-size: 25px;
-   color: rgb(73, 13, 0);
+   color: rgb(15, 15, 15);
    background: rgb(1, 68, 33);
    background: linear-gradient(
       90deg,
@@ -61,21 +68,23 @@ const StyledWrapper = styled.div`
    grid-row-gap: 0px;
    a {
       text-decoration: none;
-      color: rgb(73, 13, 0);
+      color: rgb(15, 15, 15);
    }
    li {
       list-style-type: none;
       cursor: pointer;
       font-weight: 600;
+      p {
+         :hover {
+            border: rgb(131, 137, 150) 1px solid;
+            stroke-width: 10px;
+            cursor: pointer;
+         }
+      }
    }
 
    #logo {
       position: relative;
-      :hover {
-         stroke: rgb(131, 137, 150);
-         stroke-width: 5px;
-         cursor: pointer;
-      }
    }
 `;
 class MainMenu extends Component {
@@ -89,9 +98,9 @@ class MainMenu extends Component {
                customBurgerIcon={
                   <Logo
                      id='logo'
-                     width='50'
-                     height='50'
-                     fill='rgb(73, 13, 0)'
+                     width='55'
+                     height='55'
+                     fill='rgb(178,30,0)'
                   />
                }
             >

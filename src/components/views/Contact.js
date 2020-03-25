@@ -18,6 +18,8 @@ const ContactWrapper = styled.div`
    grid-template-columns: repeat(8, 1fr);
    grid-column-gap: 0px;
    grid-row-gap: 0px;
+   box-shadow: 0 10px 30px -10px hsla(0, 0%, 0%, 1);
+
    h1 {
       text-align: center;
       color: #222;
@@ -28,7 +30,7 @@ const ContactWrapper = styled.div`
    a {
       display: block;
       text-align: center;
-      color: rgb(73, 13, 0);
+      color: rgb(15, 15, 15);
    }
    form {
       max-width: 500px;
@@ -44,7 +46,7 @@ const ContactWrapper = styled.div`
          line-height: 2em;
          margin: 5px;
          & > label {
-            color: rgb(73, 13, 0);
+            color: rgb(15, 15, 15);
             width: 110px;
             font-size: 1.2em;
             font-weight: 600;
@@ -101,7 +103,6 @@ const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 const onSubmit = async values => {
    await sleep(300);
-   //    window.alert(JSON.stringify(values, 0, 2));
 };
 const Contact = props => {
    return (

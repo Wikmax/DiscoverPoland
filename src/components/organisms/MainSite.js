@@ -2,7 +2,6 @@
 
 import React from "react";
 import Map from "../molecules/Map";
-import Button from "../atoms/Button";
 import MainMenu from "./MainMenu";
 import styled, { css } from "styled-components";
 import GlobalStyle from "../../theme/globalStyle";
@@ -70,7 +69,6 @@ const StyledWrapper = styled.div`
          .sc-bxivhb jHKvYb {
             width: 50%;
          }
-         /* height: 60px; */
       }
    }
    .esri-popup__navigation {

@@ -55,7 +55,7 @@ body{
     margin: 0;
     font-size:1.6rem;
     font-family: 'Signika', sans-serif;
-	background: url('${vineBackground}') #013220;
+	background: url('${vineBackground}') rgb(3,192,92);
 }
 `;
 

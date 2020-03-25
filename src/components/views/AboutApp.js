@@ -16,10 +16,11 @@ const AboutWrapper = styled.div`
    }
    #content {
       grid-area: 2 / 2 / 7 / 8;
-      height: 100vh;
-      width:fit-content;
+      height: 50vh;
+      width: fit-content;
       font-size: 2.1em;
-      background:white;
+      background: rgba(1, 127, 38, 0.99);
+      box-shadow: 13px 13px 30px -10px hsla(0, 0%, 0%, 1);
    }
 `;
 
@@ -37,7 +38,7 @@ const AboutApp = props => {
                jaskinie i piękne krajobrazy - wszystko to będzie można znaleźć
                tutaj. Strona ma w tym momencie charakter poglądowy i ma za
                zadanie przedstawienie moich możliwość jako programisty. Wszelkie
-               błędy i niedociągnięcia będą na bierząco naprawiane oraz dodawane
+               błędy i niedociągnięcia będą na bieżąco naprawiane oraz dodawane
                będą nowe funkcjonalności.
             </p>
          </div>

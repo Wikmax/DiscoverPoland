@@ -7,7 +7,7 @@ const StyledForm = styled.form`
    .multiselect {
       width: 200px;
       position: absolute;
-      background: rgb(73, 13, 0);
+      background: rgb(15, 15, 15);
    }
    .selectBox {
       position: relative;
@@ -27,7 +27,7 @@ const StyledForm = styled.form`
       display: none;
       border: 1px #dadada solid;
       position: fixed;
-      background: rgb(73, 13, 0);
+      background: rgb(15, 15, 15);
       width: 200px;
       color: white;
    }
@@ -112,8 +112,8 @@ class PointTypeSelect extends React.Component {
                   <label htmlFor='four'>
                      <input
                         type='checkbox'
-                        data-type='forest'
-                        id='forest'
+                        data-type='natural'
+                        id='natural'
                         className='input'
                         onChange={this.inputChange}
                      />
