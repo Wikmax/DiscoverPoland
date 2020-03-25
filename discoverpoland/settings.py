@@ -8,7 +8,12 @@ SECRET_KEY = 'wsik_xb8@l85_j2r^lw+6h*+h=b=bla$(7=ng@*(j3#(&e7-6r'
 
 DEBUG = True
 
-ALLOWED_HOSTS = ['discover-poland.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = [
+'discover-poland.herokuapp.com', '127.0.0.1',
+"http://www.discover-poland.herokuapp.com",
+"http://www.discover-poland.herokuapp.com/",
+"http://www.discover-poland.herokuapp.com/api",
+"http://www.discover-poland.herokuapp.com/admin"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,9 +70,9 @@ DATABASES = {
 }
 
 import dj_database_url
-# DATABASE_URL = os.environ['DATABASE_URL']
+DATABASE_URL = os.environ['DATABASE_URL']
 
-# conn = psycopg2.connect(DATABASE_URL, sslmode='require')
+conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
@@ -112,6 +117,9 @@ REST_FRAMEWORK = {
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:9000",
-    "http://www.discover-poland.herokuapp.com"
+    "http://www.discover-poland.herokuapp.com",
+    "http://www.discover-poland.herokuapp.com/",
+    "http://www.discover-poland.herokuapp.com/api",
+    "http://www.discover-poland.herokuapp.com/admin"
 ]
 django_heroku.settings(locals())
