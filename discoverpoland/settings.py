@@ -10,10 +10,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
 'discover-poland.herokuapp.com', '127.0.0.1',
-"http://www.discover-poland.herokuapp.com",
-"http://www.discover-poland.herokuapp.com/",
-"http://www.discover-poland.herokuapp.com/api",
-"http://www.discover-poland.herokuapp.com/admin"]
+"http://www.discover-poland.herokuapp.com"]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
