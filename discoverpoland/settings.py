@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'wsik_xb8@l85_j2r^lw+6h*+h=b=bla$(7=ng@*(j3#(&e7-6r'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
 'discover-poland.herokuapp.com', '127.0.0.1',
@@ -114,12 +114,10 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ),
 }
+CORS_ORIGIN_ALLOW_ALL = True
 CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:9000",
     "http://www.discover-poland.herokuapp.com",
-    "http://www.discover-poland.herokuapp.com/",
-    "http://www.discover-poland.herokuapp.com/api",
-    "http://www.discover-poland.herokuapp.com/admin"
 ]
 django_heroku.settings(locals())
