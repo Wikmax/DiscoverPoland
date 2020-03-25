@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: waitress-serve --port=$PORT discoverpoland.wsgi:application
+web: gunicorn discoverpoland.wsgi --log-file -

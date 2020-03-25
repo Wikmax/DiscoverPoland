@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'wsik_xb8@l85_j2r^lw+6h*+h=b=bla$(7=ng@*(j3#(&e7-6r'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
 'discover-poland.herokuapp.com', '127.0.0.1',
