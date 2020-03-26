@@ -11,6 +11,8 @@ env
 /coverage
 
 # production
+/staticfiles
+staticfiles
 build
 /build
 
