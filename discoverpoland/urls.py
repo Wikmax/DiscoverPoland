@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path, include, re_path, url
+from django.urls import path, include, re_path
 from django.conf import settings
 from django.conf.urls import url, patterns
 from django.views.generic import TemplateView
