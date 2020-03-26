@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include, re_path
 from django.conf import settings
-from django.conf.urls import url, patterns
+from django.conf.urls import url
 from django.views.generic import TemplateView
 from django.views.static import serve 
 
