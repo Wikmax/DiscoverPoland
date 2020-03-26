@@ -12,7 +12,7 @@ ALLOWED_HOSTS = [
     'discover-poland.herokuapp.com',
     '127.0.0.1',
     "http://www.discover-poland.herokuapp.com",
-    '0.0.0.0:5000'
+    'http://0.0.0.0:5000'
 ]
 
 INSTALLED_APPS = [
@@ -119,6 +119,6 @@ CORS_ORIGIN_WHITELIST = [
     "http://localhost:3000",
     "http://127.0.0.1:9000",
     "http://www.discover-poland.herokuapp.com",
-    '0.0.0.0:5000'
+    'http://0.0.0.0:5000'
 ]
 django_heroku.settings(locals())
