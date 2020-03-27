@@ -36,6 +36,14 @@ const StyledWrapper = styled.div`
    .mainSite {
       height: 100vh;
    }
+   .esri-view-width-less-than-medium .esri-popup__action-text {
+      display: block;
+      font-size: 10px;
+   }
+   .esri-popup__action-text {
+      overflow: visible;
+      text-overflow: ellipsis;
+   }
    .esri-view-root {
       margin-top: 40px;
    }
@@ -103,9 +111,7 @@ const MainSite = props => {
          <GlobalStyle />
          <MainMenu className='mainMenu' />
          <StyledWrapper>
-            <p>
-               
-            </p>
+            <p></p>
             <div id='map' className='map'>
                <div className='esri-view-user-storage'>
                   <MapTypeSelect />
