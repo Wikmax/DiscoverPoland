@@ -57,7 +57,7 @@ body{
     margin: 0;
     font-size:1.6rem;
     font-family: 'Signika', sans-serif;
-	background: url('${vineBackground}') rgb(3,192,92);
+	background: url('${vineBackground}') #039930;
 }
 .Toaster__alert{
 	button{

@@ -6,6 +6,11 @@ import styled from "styled-components";
 const StyledSelect = styled.select`
    width: 200px;
    height: 40px;
+   border-radius: 20px 50px 40px 15px;
+   font-weight: 600;
+   font-size: 14px;
+   font-family: "Avenir Next W00", "Helvetica Neue", Helvetica, Arial,
+      sans-serif;
    background: white;
    :hover {
       background: white;
