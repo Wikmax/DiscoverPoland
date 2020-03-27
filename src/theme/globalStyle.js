@@ -1,4 +1,6 @@
-import { createGlobalStyle } from 'styled-components';
+/** @format */
+
+import { createGlobalStyle } from "styled-components";
 import vineBackground from "../assets/vineBackground.png";
 
 const GlobalStyle = createGlobalStyle`
@@ -56,6 +58,14 @@ body{
     font-size:1.6rem;
     font-family: 'Signika', sans-serif;
 	background: url('${vineBackground}') rgb(3,192,92);
+}
+.Toaster__alert{
+	button{
+		padding: 0;
+	}
+	span{
+		font-size: 25px;
+	}
 }
 `;
 

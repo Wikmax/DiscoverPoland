@@ -40,7 +40,7 @@ const Directions = props => {
             setSearchWidgetState((searchWidgetState = searchWidget));
 
             props.view.ui.add(searchWidgetState, {
-               position: "top-left"
+               position: "top-right"
             });
 
             searchWidgetState.on("search-complete", function(event) {
@@ -69,7 +69,7 @@ const Directions = props => {
                (directionsWidgetState = directionsWidget)
             );
             props.view.ui.add(directionsWidgetState, {
-               position: "top-right"
+               position: "bottom-right"
             });
 
             if (props.routeParams.stops.features.length >= 2) {
@@ -87,7 +87,7 @@ const Directions = props => {
             }
             if (stopsLength !== null) {
                props.view.ui.add(directionsWidgetState, {
-                  position: "top-right"
+                  position: "bottom-right"
                });
             }
          })

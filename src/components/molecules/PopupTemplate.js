@@ -5,7 +5,7 @@ import { loadModules } from "esri-loader";
 import ExtendInfo from "./ExtendInfo";
 import axios from "axios";
 import renderer from "../atoms/PopupRenderer.js";
-import infoIcon from "../../assets/infoIcon.png"
+import infoIcon from "../../assets/infoIcon.png";
 
 class PopupTemplate extends React.Component {
    constructor(props) {
@@ -14,7 +14,7 @@ class PopupTemplate extends React.Component {
    state = {
       popupPoint: null,
       type: null,
-      objectIdsArray: null,
+      objectIdsArray: [],
       popupLayer: null,
       features: null,
       apiPoints: null,
@@ -41,7 +41,7 @@ class PopupTemplate extends React.Component {
          const expandAction = {
             title: "Informacje",
             id: "expand_action",
-            image:infoIcon
+            image: infoIcon
          };
 
          this.props.view.popup.on("trigger-action", event => {
@@ -82,7 +82,13 @@ class PopupTemplate extends React.Component {
             title: "popupLayer",
             source: featureSet,
             objectIdField: "OBJECTID",
-            outFields: ["Type", "title", "longDescription", "shortDescription", "imageURL"],
+            outFields: [
+               "Type",
+               "title",
+               "longDescription",
+               "shortDescription",
+               "imageURL"
+            ],
             fields: [
                {
                   name: "Type",
@@ -114,33 +120,35 @@ class PopupTemplate extends React.Component {
             popupTemplate: popupWindow
          });
          this.setState({ popupLayer });
-         const checkbox = document.getElementById("checkboxes");
-         const input = checkbox.getElementsByTagName("input");
-         const allInput = document.getElementById("all");
-
+         const point_type = document.getElementById("point_type");
+         const option = point_type.getElementsByTagName("option");
+         const allOption = document.getElementById("all");
          let geometryArray = [];
-         let inputArray = [];
+         let optionArray = [];
          for (let i = 0; i < featureSet.length; i++) {
             geometryArray.push(featureSet[i].geometry);
          }
-         for (let i = 0; i < input.length; i++) {
-            inputArray.push(input[i]);
+         for (let i = 0; i < option.length; i++) {
+            optionArray.push(option[i]);
          }
-         if (allInput.checked !== true) {
-            allInput.checked = true;
-         } else if (allInput.checked === true) {
+         if (allOption.checked !== true) {
+            allOption.checked = true;
+         } else if (allOption.checked === true) {
             this.props.map.add(this.state.popupLayer);
          }
-         inputArray.map((point, key) => {
-            let objectIdsArray = [];
-            input[key].onchange = event => {
+
+         let selectedPoints = []
+         optionArray.map((point, key) => {
+           
+            point_type.onchange = event => {
+               selectedPoints.length = 0;
                featureSet.forEach(point => {
                   if (
-                     point.geometry.declaredClass === event.target.id &&
-                     event.target.checked === true
+                     point.geometry.declaredClass === event.target.selectedOptions[0].id &&
+                     event.target.selectedOptions[0].selected === true
                   ) {
-                     objectIdsArray.push(point.attributes.ObjectID + 1);
-                     this.setState({ objectIdsArray });
+                     selectedPoints.push(point.attributes.ObjectID + 1)
+                     this.setState({ objectIdsArray : selectedPoints });
                   }
                });
                this.props.view
@@ -148,7 +156,7 @@ class PopupTemplate extends React.Component {
                   .then(layerView => {
                      layerView.effect = {
                         filter: {
-                           objectIds: objectIdsArray,
+                           objectIds: this.state.objectIdsArray,
                            distance: 1,
                            units: "miles"
                         },

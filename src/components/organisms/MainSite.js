@@ -44,13 +44,25 @@ const StyledWrapper = styled.div`
    }
    @media screen and (max-width: 900px) and (max-height: 770px) {
       .esri-component.esri-directions.esri-widget.esri-widget--panel.esri-directions__scroller {
-         width: 200px;
-         height: 200px;
+         width: 250px;
+         height: 220px;
+      }
+      .esri-ui-top-right.esri-ui-corner {
+         top: 50%;
       }
    }
    .map {
       width: 100%;
       height: 100%;
+   }
+   .esri-ui-top-right.esri-ui-corner {
+      top: 25%;
+      @media screen and (max-width: 900px) and (max-height: 770px) {
+         top: 50%;
+      }
+   }
+   .esri-component.esri-search.esri-widget {
+      border: 3px black solid;
    }
    .esri-view-user-storage {
       display: flex;
@@ -91,6 +103,9 @@ const MainSite = props => {
          <GlobalStyle />
          <MainMenu className='mainMenu' />
          <StyledWrapper>
+            <p>
+               
+            </p>
             <div id='map' className='map'>
                <div className='esri-view-user-storage'>
                   <MapTypeSelect />

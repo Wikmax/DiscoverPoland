@@ -1,10 +1,7 @@
 /** @format */
 
 import React from "react";
-import styled, { css } from "styled-components";
-import axios from "axios";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import styled from "styled-components";
 import { animateScroll } from "react-scroll";
 import compassExit from "../../assets/compassExit.svg";
 
@@ -24,25 +21,24 @@ const StyledWrapper = styled.div`
       grid-row-gap: 0px;
       height: 100%;
    }
-   #carousel {
-      width: 120%;
-      height: 120%;
-      grid-area: 4 / 1 / 9 / 4;
-      img {
-         width: 120%;
-         height: 120%;
-      }
-   }
    #title {
       font-weight: 600;
       font-size: 50px;
       grid-area: 2 / 7 / 3 / 8;
       color: rgb(73, 13, 0);
+
+      @media screen and (max-width: 900px) and (max-height: 770px) {
+         grid-area: 2 / 4 / 3 / 8;
+      }
    }
    #longDescription {
       grid-area: 4 / 5 / 9 / 10;
       word-break: break-all;
       font-size: 2.5vh;
+
+      @media screen and (max-width: 900px) and (max-height: 770px) {
+         grid-area: 6 / 3 / 9 / 9;
+      }
    }
    #close {
       grid-area: 1 / 10 / 1 / 10;
@@ -54,10 +50,19 @@ const StyledWrapper = styled.div`
          height: 100%;
       }
    }
-   .carousel {
+   #carousel {
+      grid-area: 4 / 1 / 9 / 4;
+      img {
+         width: 120%;
+         height: 120%;
+      }
       margin: 0 0 0 15px;
       width: 120%;
       height: 120%;
+
+      @media screen and (max-width: 900px) and (max-height: 770px) {
+         grid-area: 3 / 1 / 9 / 7;
+      }
    }
 `;
 
