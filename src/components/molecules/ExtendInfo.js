@@ -28,7 +28,7 @@ const StyledWrapper = styled.div`
       color: rgb(73, 13, 0);
 
       @media screen and (max-width: 900px) and (max-height: 770px) {
-         grid-area: 2 / 4 / 3 / 8;
+         grid-area: 2 / 3 / 3 / 10;
       }
    }
    #longDescription {
@@ -37,7 +37,8 @@ const StyledWrapper = styled.div`
       font-size: 2.5vh;
 
       @media screen and (max-width: 900px) and (max-height: 770px) {
-         grid-area: 6 / 3 / 9 / 9;
+         grid-area: 6 / 2 / 11 / 10;
+         font-size: 1.7vh;
       }
    }
    #close {
@@ -51,17 +52,22 @@ const StyledWrapper = styled.div`
       }
    }
    #carousel {
-      grid-area: 4 / 1 / 9 / 4;
-      img {
-         width: 120%;
-         height: 120%;
+      grid-area: 2 / 1 / 9 / 4;
+      div {
+         width: 100%;
+         height: 100%;
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+         }
       }
       margin: 0 0 0 15px;
       width: 120%;
       height: 120%;
 
       @media screen and (max-width: 900px) and (max-height: 770px) {
-         grid-area: 3 / 1 / 9 / 7;
+         grid-area: 1 / 3 / 7 / 7;
       }
    }
 `;

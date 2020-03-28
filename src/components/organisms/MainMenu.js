@@ -1,7 +1,7 @@
 /** @format */
 
 import React, { Component } from "react";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { slide as Menu } from "react-burger-menu";
 import { ReactComponent as Logo } from "../../assets/castleLogo.svg";
@@ -19,6 +19,7 @@ const StyledMenu = styled.div`
          width: 100px !important;
          height: 100px !important;
          padding: 20px 0 0 5px !important;
+         top:16px !important;
       }
    }
    .bm-menu-wrap.menu {
@@ -96,12 +97,7 @@ class MainMenu extends Component {
                width={"100px"}
                className={"menu"}
                customBurgerIcon={
-                  <Logo
-                     id='logo'
-                     width='55'
-                     height='55'
-                     fill='rgb(178,30,0)'
-                  />
+                  <Logo id='logo' width='55' height='55' fill='rgb(178,30,0)' />
                }
             >
                <StyledWrapper>

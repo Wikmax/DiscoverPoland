@@ -55,19 +55,10 @@ const StyledWrapper = styled.div`
          width: 250px;
          height: 220px;
       }
-      .esri-ui-top-right.esri-ui-corner {
-         top: 50%;
-      }
    }
    .map {
       width: 100%;
       height: 100%;
-   }
-   .esri-ui-top-right.esri-ui-corner {
-      top: 25%;
-      @media screen and (max-width: 900px) and (max-height: 770px) {
-         top: 50%;
-      }
    }
    .esri-component.esri-search.esri-widget {
       border: 3px black solid;

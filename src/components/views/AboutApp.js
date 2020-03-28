@@ -21,6 +21,10 @@ const AboutWrapper = styled.div`
       font-size: 2.1em;
       background: rgba(1, 127, 38, 0.99);
       box-shadow: 13px 13px 30px -10px hsla(0, 0%, 0%, 1);
+      p {
+         text-indent: 45px;
+         text-shadow: black 1px 1px 20px;
+      }
    }
 `;
 

@@ -67,6 +67,7 @@ body{
 		font-size: 25px;
 	}
 }
+
 `;
 
 export default GlobalStyle;
