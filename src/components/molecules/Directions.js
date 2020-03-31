@@ -1,9 +1,3 @@
-/**
- * /* eslint-disable react-hooks/exhaustive-deps
- *
- * @format
- */
-
 import { useState, useEffect } from "react";
 import { loadModules } from "esri-loader";
 
@@ -57,7 +51,6 @@ const Directions = props => {
             });
 
             setViewModel((viewModel = directionsWidgetViewModel));
-            console.log(viewModel, "viewModel");
 
             let directionsWidget = new Directions({
                view: props.view,

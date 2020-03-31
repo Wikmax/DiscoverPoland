@@ -28,7 +28,6 @@ class PopupTemplate extends React.Component {
          .get("https://discover-poland.herokuapp.com/api/")
          .then(response => {
             this.setState({ apiPoints: response.data });
-            console.log(response);
          })
          .catch(error => {
             console.log(error);
@@ -138,8 +137,7 @@ class PopupTemplate extends React.Component {
          }
 
          let selectedPoints = []
-         optionArray.map((point, key) => {
-           
+         optionArray.map((point, key) => {          
             point_type.onchange = event => {
                selectedPoints.length = 0;
                featureSet.forEach(point => {
@@ -147,6 +145,7 @@ class PopupTemplate extends React.Component {
                      point.geometry.declaredClass === event.target.selectedOptions[0].id &&
                      event.target.selectedOptions[0].selected === true
                   ) {
+                     
                      selectedPoints.push(point.attributes.ObjectID + 1)
                      this.setState({ objectIdsArray : selectedPoints });
                   }
@@ -157,7 +156,7 @@ class PopupTemplate extends React.Component {
                      layerView.effect = {
                         filter: {
                            objectIds: this.state.objectIdsArray,
-                           distance: 1,
+                           distance: 0.1,
                            units: "miles"
                         },
                         excludedEffect: "opacity(0)"
