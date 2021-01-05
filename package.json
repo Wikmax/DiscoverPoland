@@ -5,7 +5,7 @@
    "dependencies": {
       "@esri/react-arcgis": "^5.0.0",
       "@terrestris/react-geo": "^11.4.4",
-      "axios": "^0.19.2",
+      "axios": "^0.21.1",
       "esri-loader": "^2.13.0",
       "final-form": "^4.18.7",
       "history": "^4.10.1",
